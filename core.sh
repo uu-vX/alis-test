@@ -76,7 +76,7 @@ pacman -S --noconfirm --needed xf86-video-intel lib32-mesa vulkan-intel lib32-vu
 mkinitcpioModules+=" i915 "
 pacman -S --noconfirm --needed nvidia-lts nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 	#MODULES=(btrfs i915 nvidia)
-mkinitcpioModules+=" nvidia nvidia-modeset nvidia-uvm nvidia-drm"
+mkinitcpioModules+=" nvidia-lts nvidia-modeset nvidia-uvm nvidia-drm"
     # nvidia modules linked to nvidia linux kernel
 sed -i "s/^MODULES=()/MODULES=(${mkinitcpioModules})/" /etc/mkinitcpio.conf
 }
